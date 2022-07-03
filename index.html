@@ -16,19 +16,33 @@
 
 <body>
     <div class="container">
-        <div class="menu_div">
-            <table class="menu_table table table-dark table-hover table-striped table-bordered">
-                <tr class="menu_header">
-                    <th>Ana Yemek</th>
-                    <th>Yemek</th>
-                    <th>Tatlı</th>
-                </tr>
-                <tr class="menu_items">
-                    <td>Patlıcan Dolması</td>
-                    <td>Makarna</td>
-                    <td>Kemalpaşa</td>
-                </tr>
-            </table>
+        <div class="menu_div row">
+            <div class="col-4">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Bulgur
+                    </label>
+                </div>
+            </div>
+            <div class="col-8">
+                <table class="menu_table table table-dark table-hover table-striped table-bordered col-6"
+                    id="menu_table">
+                    <tbody id="menu_tbody">
+                        <tr class="menu_header">
+                            <th>Çorba</th>
+                            <th>Ana Yemek</th>
+                            <th>3. Tabak</th>
+                        </tr>
+                        <tr class="menu_items">
+                            <td>Ezogelin Çorbası</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+
+                </table>
+            </div>
         </div>
     </div>
     <!-- JavaScript -->

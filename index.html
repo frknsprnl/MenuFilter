@@ -18,30 +18,34 @@
     <div class="container">
         <div class="menu_div row">
             <div class="col-4">
-                <div class="form-check">
+                <h5>Malzemeler: </h5>
+                <div class="form-check ms-3">
                     <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                     <label class="form-check-label" for="flexCheckDefault">
                         Bulgur
                     </label>
                 </div>
+                <button class="btn btn-danger ms-4 mt-3">Filtrele</button>
             </div>
-            <div class="col-8">
-                <table class="menu_table table table-dark table-hover table-striped table-bordered col-6"
-                    id="menu_table">
-                    <tbody id="menu_tbody">
-                        <tr class="menu_header">
-                            <th>Çorba</th>
-                            <th>Ana Yemek</th>
-                            <th>3. Tabak</th>
-                        </tr>
-                        <tr class="menu_items">
-                            <td>Ezogelin Çorbası</td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                    </tbody>
+            <div class="menu_list col-8">
+                <div class="soupList" id="soupList">
+                    <h5>Çorba</h5>
+                    <ul class="list-group" id="ulSoup">
 
-                </table>
+                    </ul>
+                </div>
+                <div class="mainCourseList" id="mainCourseList">
+                    <h5>Ana Yemek</h5>
+                    <ul class="list-group" id="ulMainCourse">
+
+                    </ul>
+                </div>
+                <div class="thirdPList" id="thirdPlateList">
+                    <h5>3. Tabak</h5>
+                    <ul class="list-group" id="ulThirdP">
+
+                    </ul>
+                </div>
             </div>
         </div>
     </div>

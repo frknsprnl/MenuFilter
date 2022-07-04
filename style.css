@@ -16,6 +16,11 @@ body {
     font-family: "Zilla Slab", serif;
 }
 
+h6 {
+    font-weight: 600;
+    text-align: center;
+}
+
 .menu_div {
     margin-top: 20px;
 }
@@ -23,6 +28,8 @@ body {
 .menu_list {
     display: flex;
     justify-content: space-evenly;
+    margin: 0 auto;
+    text-align: center;
 }
 
 

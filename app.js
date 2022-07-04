@@ -175,15 +175,15 @@ const menu = [
         ingredients: ["Mantar", "Krema"],
     },
 ];
-
+// Filters
 const soupList = menu.filter(item => item.category === "Soup");
 const mainCList = menu.filter(item => item.category === "mainCourse");
 const thirdPList = menu.filter(item => item.category === "thirdPlate");
-
+// List DOMs
 const soupDOM = document.querySelector("#soupList");
 const mainCourseDOM = document.querySelector("#mainCourseList");
 const thirdPDOM = document.querySelector("thirdPlateList");
-
+// insert list items start
 const addSoup = () => {
     const ulDOM = document.querySelector("#ulSoup");
     for (let i = 0; i < soupList.length; i++) {
@@ -218,8 +218,45 @@ const addThirdPlate = () => {
 
     }
 }
-
+// insert list items end
 addSoup();
 addMainCourse();
 addThirdPlate();
+// get unique items from ingredients 
+let newArr = [];
+for (let i = 0; i < menu.length; i++) {
+    for (let j = 0; j < menu[i].ingredients.length; j++) {
+        newArr.push(`${menu[i].ingredients[j]}`)
+    }
+}
+// unique ingredients for checkboxes
+const unique = [...new Set(newArr)];
+
+const setCheckbox = (item) => {
+    const ingListDOM = document.querySelector("#ingredients_list");
+    const ingDiv = document.createElement('div');
+    ingDiv.classList.add("form-check", "ms-3");
+    ingListDOM.append(ingDiv);
+
+    const ingInput = document.createElement('input');
+    ingInput.classList.add("form-check-input");
+    ingInput.type = "checkbox";
+    ingInput.id = "flexCheckDefault";
+    ingDiv.append(ingInput);
+
+    const ingLabel = document.createElement('label');
+    ingLabel.classList.add("form-check-label");
+    ingLabel.innerHTML = `${item}`
+    ingDiv.append(ingLabel);
+
+}
+
+const addCheckbox = () => {
+    for (let i = 0; i < unique.length; i++) {
+        setCheckbox(unique[i]);
+    }
+}
+
+
+addCheckbox();
 

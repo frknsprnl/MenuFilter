@@ -274,10 +274,16 @@ for (let checkbox of checkboxes) {
     checkbox.addEventListener('click', function(){
         if( this.checked == true) {
             checkedList.push(this.value)
-            
         } else {
             checkedList = checkedList.filter(e => e !== this.value);
-
+            filteredSoupList = [];
+            filteredMainCourseList = [];
+            filteredThirdPlateList = [];
+            if (checkedList === []) {         
+                addSoup(soupList);
+                addMainCourse(mainCourseList);
+                addThirdPlate(thirdPlateList);
+            }
         }
         removeItems();
         filterIngredients();

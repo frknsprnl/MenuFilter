@@ -177,17 +177,17 @@ const menu = [
 ];
 // Filters
 const soupList = menu.filter(item => item.category === "Soup");
-const mainCList = menu.filter(item => item.category === "mainCourse");
-const thirdPList = menu.filter(item => item.category === "thirdPlate");
+const mainCourseList = menu.filter(item => item.category === "mainCourse");
+const thirdPlateList = menu.filter(item => item.category === "thirdPlate");
 // List DOMs
 const soupDOM = document.querySelector("#soupList");
 const mainCourseDOM = document.querySelector("#mainCourseList");
 const thirdPDOM = document.querySelector("thirdPlateList");
 // insert list items start
-const addSoup = () => {
+const addSoup = (filter) => {
     const ulDOM = document.querySelector("#ulSoup");
-    for (let i = 0; i < soupList.length; i++) {
-        const soupItem = soupList[i];
+    for (let i = 0; i < filter.length; i++) {
+        const soupItem = filter[i];
         const liDOM  = document.createElement('li');
         liDOM.innerHTML = `${soupItem.title}`;
         liDOM.classList.add("list-group-item");
@@ -195,10 +195,10 @@ const addSoup = () => {
         ulDOM.append(liDOM);
     }
 }
-const addMainCourse = () => {
+const addMainCourse = (filter) => {
     const ulDOM = document.querySelector("#ulMainCourse");
-    for (let i = 0; i < mainCList.length; i++) {
-        const mainCItem = mainCList[i];
+    for (let i = 0; i < filter.length; i++) {
+        const mainCItem = filter[i];
         const liDOM = document.createElement('li');
         liDOM.innerHTML = `${mainCItem.title}`;
         liDOM.classList.add("list-group-item");
@@ -206,10 +206,10 @@ const addMainCourse = () => {
         ulDOM.append(liDOM);
     }
 }
-const addThirdPlate = () => {
+const addThirdPlate = (filter) => {
     const ulDOM = document.querySelector("#ulThirdP");
-    for (let i = 0; i < thirdPList.length; i++) {
-        const thirdPItem = thirdPList[i];
+    for (let i = 0; i < filter.length; i++) {
+        const thirdPItem = filter[i];
         const liDOM = document.createElement('li');
         liDOM.innerHTML = `${thirdPItem.title}`;
         liDOM.classList.add("list-group-item");
@@ -219,19 +219,24 @@ const addThirdPlate = () => {
     }
 }
 // insert list items end
-addSoup();
-addMainCourse();
-addThirdPlate();
-// get unique items from ingredients 
+
+// Soup - Main Course - Third Plate lists
+addSoup(soupList);
+addMainCourse(mainCourseList);
+addThirdPlate(thirdPlateList);
+
+// get all items from ingredients 
 let newArr = [];
 for (let i = 0; i < menu.length; i++) {
     for (let j = 0; j < menu[i].ingredients.length; j++) {
         newArr.push(`${menu[i].ingredients[j]}`)
     }
 }
-// unique ingredients for checkboxes
+
+// remove duplicates and get unique ingredients for checkboxes
 const unique = [...new Set(newArr)];
 
+// creating the checkbox structure
 const setCheckbox = (item) => {
     const ingListDOM = document.querySelector("#ingredients_list");
     const ingDiv = document.createElement('div');
@@ -241,6 +246,7 @@ const setCheckbox = (item) => {
     const ingInput = document.createElement('input');
     ingInput.classList.add("form-check-input");
     ingInput.type = "checkbox";
+    ingInput.value = `${item}`;
     ingInput.id = "flexCheckDefault";
     ingDiv.append(ingInput);
 
@@ -250,13 +256,80 @@ const setCheckbox = (item) => {
     ingDiv.append(ingLabel);
 
 }
-
+// add unique values to checkboxes
 const addCheckbox = () => {
     for (let i = 0; i < unique.length; i++) {
         setCheckbox(unique[i]);
     }
 }
 
-
 addCheckbox();
+
+// checkbox - checked values to array   
+
+const checkboxes = document.querySelectorAll(".form-check-input");
+let checkedList = [];
+
+for (let checkbox of checkboxes) {
+    checkbox.addEventListener('click', function(){
+        if( this.checked == true) {
+            checkedList.push(this.value)
+            
+        } else {
+            checkedList = checkedList.filter(e => e !== this.value);
+
+        }
+        removeItems();
+        filterIngredients();
+        addSoup(filteredSoupList);
+        addMainCourse(filteredMainCourseList);
+        addThirdPlate(filteredThirdPlateList);
+    })
+}
+
+const removeItems = () => {
+    const ulSoupDOM = document.querySelector("#ulSoup");
+    const ulMainCourseDOM = document.querySelector("#ulMainCourse");
+    const ulThirdPDOM = document.querySelector("#ulThirdP");
+
+    while(ulSoupDOM.firstChild) ulSoupDOM.removeChild(ulSoupDOM.firstChild);
+    while(ulMainCourseDOM.firstChild) ulMainCourseDOM.removeChild(ulMainCourseDOM.firstChild);
+    while(ulThirdPDOM.firstChild) ulThirdPDOM.removeChild(ulThirdPDOM.firstChild);
+}
+
+let filteredSoupList = [];
+let filteredMainCourseList = [];
+let filteredThirdPlateList = [];
+
+const filterIngredients = () => {
+    
+    for (checked of checkedList) {
+        for ( let i = 0; i < soupList.length; i++) {
+            if (soupList[i].ingredients.includes(checked)) {
+                filteredSoupList.push(soupList[i]);
+            }
+        }
+
+        for( let j = 0; j < mainCourseList.length; j++) {
+            if (mainCourseList[j].ingredients.includes(checked)) {
+                filteredMainCourseList.push(mainCourseList[j]);
+            }
+        }
+
+        for ( let k = 0; k < thirdPlateList.length; k++) {
+            if (thirdPlateList[k].ingredients.includes(checked)) {
+                filteredThirdPlateList.push(thirdPlateList[k]);
+            }
+        }
+    }
+    
+    filteredSoupList = [...new Set(filteredSoupList)];
+    console.log(filteredSoupList)
+    filteredMainCourseList = [...new Set(filteredMainCourseList)];
+    console.log(filteredMainCourseList)
+    filteredThirdPlateList = [...new Set(filteredThirdPlateList)];
+    console.log(filteredThirdPlateList)
+}
+
+
 

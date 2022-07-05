@@ -32,6 +32,23 @@ h6 {
     text-align: center;
 }
 
+.form-check-input{
+    margin-top: 10px;
+}
+
+.form-check-label {
+    margin-top: 6px;
+}
+
+.filterBtn {
+    padding: 8px 10px;
+    background-color: var(--navy-blue);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    margin-top: 12px;
+    margin-left: 20px;
+}
 
 
 

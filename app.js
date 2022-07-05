@@ -279,10 +279,8 @@ for (let checkbox of checkboxes) {
             filteredSoupList = [];
             filteredMainCourseList = [];
             filteredThirdPlateList = [];
-            if (checkedList === []) {         
-                addSoup(soupList);
-                addMainCourse(mainCourseList);
-                addThirdPlate(thirdPlateList);
+            if (checkedList.length == 0) {         
+                location.reload();
             }
         }
         removeItems();
@@ -330,11 +328,9 @@ const filterIngredients = () => {
     }
     
     filteredSoupList = [...new Set(filteredSoupList)];
-    console.log(filteredSoupList)
     filteredMainCourseList = [...new Set(filteredMainCourseList)];
-    console.log(filteredMainCourseList)
     filteredThirdPlateList = [...new Set(filteredThirdPlateList)];
-    console.log(filteredThirdPlateList)
+
 }
 
 

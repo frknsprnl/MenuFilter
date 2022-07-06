@@ -220,10 +220,14 @@ const addThirdPlate = (filter) => {
 }
 // insert list items end
 
-// Soup - Main Course - Third Plate lists
-addSoup(soupList);
-addMainCourse(mainCourseList);
-addThirdPlate(thirdPlateList);
+// print Soup - Main Course - Third Plate lists
+const startConf = () => {
+    addSoup(soupList);
+    addMainCourse(mainCourseList);
+    addThirdPlate(thirdPlateList);
+}
+
+startConf();
 
 // get all items from ingredients 
 let newArr = [];
@@ -280,7 +284,7 @@ for (let checkbox of checkboxes) {
             filteredMainCourseList = [];
             filteredThirdPlateList = [];
             if (checkedList.length == 0) {         
-                location.reload();
+                startConf();
             }
         }
         removeItems();

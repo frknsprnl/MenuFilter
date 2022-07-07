@@ -39,6 +39,10 @@ body {
     text-align: center;
 }
 
+.form-check {
+      margin-left: 20px;  
+}
+
 .form-check-input{
     margin-top: 10px;
 }
@@ -99,12 +103,5 @@ body {
     margin: 0px 0px 0px 10px;
 }
 
-/* .soupList {
-    margin-right: 10px;
-}
-
-.mainCourseList {
-    margin-right: 10px;
-} */
 
 

@@ -286,8 +286,9 @@ for (let checkbox of checkboxes) {
             filteredSoupList = [];
             filteredMainCourseList = [];
             filteredThirdPlateList = [];
-            if (checkedList.length == 0) {         
-                startConf();
+        
+            if (checkedList.length === 0) {
+                location.reload();
             }
         }
         removeItems();

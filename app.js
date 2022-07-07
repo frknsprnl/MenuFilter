@@ -240,11 +240,14 @@ for (let i = 0; i < menu.length; i++) {
 // remove duplicates and get unique ingredients for checkboxes
 const unique = [...new Set(newArr)];
 
+// unique ingredients sorting by alphabetical order
+unique.sort((a, b) => a.localeCompare(b));
+
 // creating the checkbox structure
 const setCheckbox = (item) => {
     const ingListDOM = document.querySelector("#ingredients_list");
     const ingDiv = document.createElement('div');
-    ingDiv.classList.add("form-check", "ms-3");
+    ingDiv.classList.add("form-check");
     ingListDOM.append(ingDiv);
 
     const ingInput = document.createElement('input');
@@ -336,6 +339,5 @@ const filterIngredients = () => {
     filteredThirdPlateList = [...new Set(filteredThirdPlateList)];
 
 }
-
 
 

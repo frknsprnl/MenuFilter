@@ -40,7 +40,7 @@ body {
 }
 
 .form-check {
-      margin-left: 20px;  
+      margin-left: 20px;
 }
 
 .form-check-input{
@@ -57,7 +57,7 @@ body {
     color: white;
     font-weight: 600;
     text-align: center;
-    padding: 8px;
+    padding: 10px;
     white-space: nowrap;
     margin-bottom: 0;
     width: 130px;
@@ -72,7 +72,7 @@ body {
 }
 
 .list-group-item {
-    padding: 8px;
+    padding: 10px;
     width: 130px;
     white-space: nowrap;
     font-size: .90rem;
@@ -92,15 +92,18 @@ body {
 
 
 .ingredients_list {
-    transition: .75s ease-in all;
+    transition: .3s ease-in all;
     background-color: var(--dark-blue);
     padding: 10px 5px;
     border-radius: 10px;
     margin-bottom: 20px;
+    columns: 2;
+    columns: 6rem auto;
 }
 
 .ingredients_header {
-    margin: 0px 0px 0px 10px;
+    margin: 0px 0px 10px 10px;
+    color: white;
 }
 
 

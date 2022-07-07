@@ -247,7 +247,7 @@ unique.sort((a, b) => a.localeCompare(b));
 const setCheckbox = (item) => {
     const ingListDOM = document.querySelector("#ingredients_list");
     const ingDiv = document.createElement('div');
-    ingDiv.classList.add("form-check");
+    ingDiv.classList.add("form-check");    
     ingListDOM.append(ingDiv);
 
     const ingInput = document.createElement('input');

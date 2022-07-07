@@ -24,25 +24,27 @@
 
 <body>
     <div class="container mt-3 mb-5 ">
-
-        <button class="btn-collapse" type="button" data-bs-toggle="collapse" data-bs-target="#ingredients_list"
-            aria-expanded="false" aria-controls="ingredients_list">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-chevron-down"
-                viewBox="0 0 16 16">
-                <path fill-rule="evenodd"
-                    d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
-            </svg>
-        </button>
+        <div class="d-flex">
+            <button class="btn-collapse" type="button" data-bs-toggle="collapse" data-bs-target="#ingredients_list"
+                aria-expanded="false" aria-controls="ingredients_list">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-chevron-down"
+                    viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                </svg>
+            </button>
+            <h5 class="ingredients_header mt-2">Malzemeler: </h5>
+        </div>
 
         <div class="menu_div row">
 
-            <div class=" col-md-2 col-sm-12">
+            <div class=" col-md-4 col-sm-12">
                 <div class="ingredients_list collapse" id="ingredients_list">
-                    <h5 class="ingredients_header text-white">Malzemeler: </h5>
+
                 </div>
             </div>
 
-            <div class="menu_list col-md-10 col-sm-12">
+            <div class="menu_list col-md-8 col-sm-12">
                 <div class="soupList" id="soupList">
                     <h6 class="list-header">Çorba</h6>
                     <ul class="list-group" id="ulSoup">

@@ -76,6 +76,7 @@ body {
     padding: 10px 5px;
     white-space: nowrap;
     font-size: .9rem;
+    list-style-type: none;
 }
 
 .list-group-item:first-child {

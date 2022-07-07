@@ -40,11 +40,12 @@ body {
 }
 
 .form-check {
-      margin-left: 20px;
+    margin-left: 15px;
 }
 
 .form-check-input{
     margin-top: 10px;
+
 }
 
 .form-check-label {
@@ -57,10 +58,9 @@ body {
     color: white;
     font-weight: 600;
     text-align: center;
-    padding: 10px;
+    padding: 1rem 2rem;
     white-space: nowrap;
     margin-bottom: 0;
-    width: 130px;
 }
 
 .soupList > .list-header {
@@ -72,10 +72,9 @@ body {
 }
 
 .list-group-item {
-    padding: 10px;
-    width: 130px;
+    padding: 10px 5px;
     white-space: nowrap;
-    font-size: .90rem;
+    font-size: .9rem;
 }
 
 .list-group-item:first-child {

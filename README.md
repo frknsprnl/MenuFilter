@@ -1,3 +1,3 @@
-# MenuGenerator
+# MenuFilter
 
 https://kursunlupersonel.netlify.app/

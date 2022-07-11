@@ -1,8 +1,7 @@
 :root {
-    --beige : #E9D5CA;
     --purple: #827397;
-    --navy-blue: #4D4C7D;
-    --dark-blue: #363062;
+    --navy-blue: #B762C1;
+    --dark-blue: #8946A6;
 }
 
 * {
@@ -12,20 +11,21 @@
 }
 
 body {
-    background-color: var(--navy-blue);
+    background: rgb(183,98,193);
+    background: linear-gradient(0deg, rgba(183,98,193,1) 9%, rgba(234,153,213,1) 86%, rgba(255,205,221,1) 100%);
     font-family: "Zilla Slab", serif;
     padding-bottom: 1rem;
 }
 
 .btn-collapse {
-    background-color: var(--navy-blue);
+    background-color: var(--dark-blue);
     padding: 8px 12px;
     border-radius: 5px;
     border: 1px solid var(--dark-blue);
 }
 
 .btn-collapse:hover{
-    background-color: var(--dark-blue);
+    background-color: var(--navy-blue);
 }
 
 .menu_div {
@@ -104,7 +104,7 @@ body {
 
 .ingredients_header {
     margin: 0px 0px 10px 10px;
-    color: white;
+    color: var(--dark-blue);
 }
 
 
